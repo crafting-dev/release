@@ -13,8 +13,8 @@
 
     :root {
       --color-bg: #ffffff;
-      --color-header-bg: #1a1a2e;
-      --color-header-text: #e8e8f0;
+      --color-banner-bg: #002127;
+      --banner-height: 4.5rem;
       --color-accent: #0ea5e9;
       --color-accent-hover: #38bdf8;
       --color-text: #1f2937;
@@ -32,39 +32,36 @@
       flex-direction: column;
     }
 
-    /* ── Header ──────────────────────────────────────── */
-    header {
-      background: var(--color-header-bg);
-      padding: 0 2rem;
-      height: 56px;
+    /* ── Banner (matches docs.sandboxes.cloud) ───────── */
+    #banner {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.75rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      height: var(--banner-height);
+      padding: 0 1.25rem;
+      background: var(--color-banner-bg);
+      box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.3);
     }
 
-    .logo-mark {
-      width: 28px;
-      height: 28px;
-      background: var(--color-accent);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+    #banner .logo a {
+      display: block;
+      width: 10.75rem;
+      height: 2.42rem;
+      background-image: url('crafting.svg');
+      background-repeat: no-repeat;
+      background-size: 10.75rem 2.42rem;
+      text-decoration: none;
+      opacity: 1;
+      transition: opacity 0.15s;
     }
 
-    .logo-mark svg {
-      width: 16px;
-      height: 16px;
-      fill: white;
-    }
-
-    .logo-text {
-      color: var(--color-header-text);
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
+    #banner .logo a:hover {
+      opacity: 0.85;
+      text-decoration: none;
     }
 
     /* ── Main content ────────────────────────────────── */
@@ -160,17 +157,10 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo-mark" aria-hidden="true">
-      <!-- Simple cube / crafting icon -->
-      <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 1 L14 4.5 L14 11.5 L8 15 L2 11.5 L2 4.5 Z" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-        <line x1="8" y1="1" x2="8" y2="8" stroke="white" stroke-width="1.5"/>
-        <line x1="8" y1="8" x2="14" y2="4.5" stroke="white" stroke-width="1.5"/>
-        <line x1="8" y1="8" x2="2" y2="4.5" stroke="white" stroke-width="1.5"/>
-      </svg>
+  <header id="banner">
+    <div class="logo">
+      <a href="https://docs.sandboxes.cloud" aria-label="Crafting Sandbox"></a>
     </div>
-    <span class="logo-text">Crafting</span>
   </header>
 
   <main>
