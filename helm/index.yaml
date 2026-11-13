@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   cdb:
   - apiVersion: v2
-    created: "2026-11-12T20:06:37.491865366Z"
-    digest: 9de2da744349cc4847f55bcc5765e9fe5617626f66b701b2c8a65d994b6441bb
+    created: "2026-11-13T22:30:06.754334667Z"
+    digest: 22169e51b288a019952e93c3eee24793ccb03e6859a9899c3814b9a3d7763cfc
     name: cdb
     urls:
     - https://crafting-dev.github.io/release/helm/cdb-2.5.0.tgz
     version: 2.5.0
-generated: "2026-11-12T20:06:37.490636406Z"
+generated: "2026-11-13T22:30:06.752835188Z"
